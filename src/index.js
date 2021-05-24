@@ -8,6 +8,7 @@ import {
   MgCarousel,
   MgImage,
   CategoryCarousel,
+  BlogCarousel,
 } from "./components/index.js";
 
 // paterns
@@ -23,4 +24,5 @@ export {
   MgImage,
   MgCarousel,
   CategoryCarousel,
+  BlogCarousel,
 };

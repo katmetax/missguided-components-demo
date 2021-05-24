@@ -5,18 +5,21 @@ import { MgButton } from "../Button/index.jsx";
 import "./styles.scss";
 
 export const MgCarousel = (Props) => {
-  const { items = [], rotationInterval = null, controls = false } = Props;
+  const { items = [], rotationInterval = null, controls = false, slide = true , touch = true } = Props;
 
   return (
-    <Carousel fade controls={controls} interval={rotationInterval}>
+    <Carousel fade controls={controls} interval={rotationInterval} slide={slide} touch={touch}>
       {items.map(
-        ({ url, imageSrc: { mobile, desktop }, title, subtitle, button }) => (
+        ({ link, image, imageMobile, title, subtitle, callToAction }) => (
           <Carousel.Item>
-            <a href={url}>
-              <MgImage desktop={desktop} mobile={mobile} />
+            <a href={link}>
+              <MgImage desktop={image.image} mobile={imageMobile.image} />
               <Carousel.Caption>
-                {title && <h4>{title}</h4>}
-                {button && <MgButton text={button} fullWidth={false} />}
+                {title && <h1>{title}</h1>}
+                {subtitle && <h4>{subtitle}</h4>}
+                {callToAction && (
+                  <MgButton text={callToAction.label} fullWidth={false} />
+                )}
               </Carousel.Caption>
             </a>
           </Carousel.Item>

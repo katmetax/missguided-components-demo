@@ -6,6 +6,7 @@ import { MgButton } from "./Button/index.jsx";
 import { MgCarousel } from "./MgCarousel/index.jsx";
 import { MgImage } from "./MgImage/index.jsx";
 import { CategoryCarousel } from "./CategoryCarousel/index.jsx";
+import { BlogCarousel } from './BlogCarousel/index.jsx';
 
 export {
   PageTitle,
@@ -16,4 +17,5 @@ export {
   MgImage,
   MgCarousel,
   CategoryCarousel,
+  BlogCarousel,
 };

@@ -1,4 +1,10 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/_carousel.scss";
+
 .carousel {
+  margin-bottom: 7rem;
   ol.carousel-indicators {
     li {
       width: 14px;
@@ -33,6 +39,10 @@
 
         button {
           margin: 20px 0;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }

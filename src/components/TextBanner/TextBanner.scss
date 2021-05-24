@@ -1,6 +1,12 @@
-.text-banner{
+.text-banner {
     text-align: center;
+    font-size: 18px;
     padding: 25px;
+    font-weight: bold;
+
+    p {
+        margin: 0;
+    }
 }
 
 a, a:hover{

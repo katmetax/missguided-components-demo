@@ -2,13 +2,35 @@
   display: flex;
   overflow-x: auto;
   justify-content: center;
+  flex-direction: column;
+  max-width: 1060px;
+  padding-right: 40px;
+  padding-left: 20px;
+  margin: 0 auto;
 
   a {
     margin-right: 1rem;
   }
 
   img {
-    width: 120px;
+    width: 200px;
+  }
+
+  h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  &--items {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
   }
 
   @media (max-width: 660px) {

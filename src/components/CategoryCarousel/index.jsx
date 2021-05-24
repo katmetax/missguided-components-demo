@@ -3,18 +3,21 @@ import { MgImage } from "../MgImage/index.jsx";
 import "./styles.scss";
 
 export const CategoryCarousel = (props) => {
-  const { items } = props;
+  const { items, title } = props;
 
   return (
     <div className="category-carousel">
-      {items.map(({ imageSrc: { desktop, mobile }, text, url }) => {
+      <h2>{title}</h2>
+      <div className="category-carousel--items">
+      {items.map(({ image, title, link }) => {
         return (
-          <a href={url}>
-            <MgImage desktop={desktop} mobile={mobile} />
-            <p>{text}</p>
+          <a href={link}>
+            <MgImage desktop={image} />
+            <h3>{title}</h3>
           </a>
         );
       })}
+      </div>
     </div>
   );
 };
