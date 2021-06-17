@@ -207,27 +207,12 @@ var getSourceSet = function getSourceSet(url) {
 var MgImage = function MgImage(_ref) {
   var desktop = _ref.desktop,
       mobile = _ref.mobile;
-  // let mobileBreakPoints = [300, 402, 491, 569, 639, 711, 756, 767];
-  // let desktopBreakPoints = [
-  //   768,
-  //   937,
-  //   1086,
-  //   1226,
-  //   1353,
-  //   1474,
-  //   1582,
-  //   1686,
-  //   1792,
-  //   1905,
-  // ];
   var mobileImage = desktop ? getImageUrl(desktop) : getImageUrl(mobile);
   var srcSet = getSourceSet(mobileImage);
-  console.log(mobileImage, srcSet);
 
   var renderSource = function renderSource(source, i) {
     return /*#__PURE__*/React.createElement("source", {
-      key: "".concat(source.type).concat(i) // media={source.mediaQuery}
-      ,
+      key: "".concat(source.type).concat(i),
       srcSet: source.srcSet,
       type: source.type
     });
@@ -333,6 +318,42 @@ var BlogCarousel = function BlogCarousel(props) {
   })));
 };
 
+var css$9 = ".category-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: auto .5rem;\n  flex: 1 1 400px;\n  padding: 10px; }\n  @media (min-width: 768px) {\n    .category-item {\n      margin: auto .75rem; } }\n\n.category-item__link {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  text-decoration: none; }\n\n.category-item__title {\n  font-size: 2rem;\n  font-weight: 700;\n  letter-spacing: .5px;\n  text-transform: capitalize;\n  text-align: center;\n  color: #000;\n  line-height: 1.2;\n  margin: 1rem 0; }\n  @media (max-width: 375px) {\n    .category-item__title {\n      font-size: .875rem; } }\n  @media (min-width: 768px) {\n    .category-item__title {\n      letter-spacing: 0.6px; } }\n\n.category-item__button {\n  display: inline-block;\n  font-weight: 700;\n  text-align: center;\n  text-transform: lowercase;\n  padding: 1rem 1.25rem;\n  border: 1px solid #000;\n  color: #000;\n  background-color: #fff;\n  min-width: 100px; }\n";
+n(css$9,{});
+
+var CategoryItem = function CategoryItem(_ref) {
+  var buttonText = _ref.buttonText,
+      title = _ref.title,
+      image = _ref.image,
+      categoryLink = _ref.categoryLink;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "category-item"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "category-item__link",
+    href: categoryLink
+  }, /*#__PURE__*/React.createElement(MgImage, {
+    desktop: image
+  }), /*#__PURE__*/React.createElement("h2", {
+    className: "category-item__title"
+  }, title), /*#__PURE__*/React.createElement("button", {
+    className: "category-item__button",
+    type: "button"
+  }, buttonText)));
+};
+
+var css$a = ".categories-grid__subtitle {\n  font-size: 0.75rem;\n  font-weight: 700;\n  color: #474747;\n  text-align: center;\n  letter-spacing: 0.5px;\n  margin-bottom: 1.5rem; }\n\n.categories-grid__items {\n  display: flex;\n  max-width: 900px;\n  margin: 0 auto;\n  flex-wrap: wrap; }\n";
+n(css$a,{});
+
+var CategoriesGrid = function CategoriesGrid(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "categories-grid"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "categories-grid__items"
+  }, Object.values(props).map(function (item) {
+    return /*#__PURE__*/React.createElement(CategoryItem, item);
+  })));
+};
+
 var DiscountBoxes = function DiscountBoxes(Props) {
   var codes = Props.codes;
   return /*#__PURE__*/React.createElement("div", null, codes.map(function (code) {
@@ -340,4 +361,4 @@ var DiscountBoxes = function DiscountBoxes(Props) {
   }));
 };
 
-export { BlogCarousel, CategoryCarousel, DiscountBox, DiscountBoxes, MgButton, MgCarousel, MgImage, PageTitle, TextBanner, TextBlock };
+export { BlogCarousel, CategoriesGrid, CategoryCarousel, DiscountBox, DiscountBoxes, MgButton, MgCarousel, MgImage, PageTitle, TextBanner, TextBlock };

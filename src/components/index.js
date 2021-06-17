@@ -7,6 +7,7 @@ import { MgCarousel } from "./MgCarousel/index.jsx";
 import { MgImage } from "./MgImage/index.jsx";
 import { CategoryCarousel } from "./CategoryCarousel/index.jsx";
 import { BlogCarousel } from './BlogCarousel/index.jsx';
+import { CategoriesGrid } from './CategoriesGrid/index.jsx';
 
 export {
   PageTitle,
@@ -18,4 +19,5 @@ export {
   MgCarousel,
   CategoryCarousel,
   BlogCarousel,
+  CategoriesGrid
 };

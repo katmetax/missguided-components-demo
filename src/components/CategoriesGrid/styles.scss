@@ -1,0 +1,15 @@
+.categories-grid__subtitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #474747;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.categories-grid__items {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
